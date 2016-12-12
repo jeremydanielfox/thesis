@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.28)  12 DEC 2016 00:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.28)  12 DEC 2016 01:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -557,7 +557,7 @@ Chapter 1.
 
 ] [6]
 Chapter 2.
-(./chapters/chapter02.tex
+(./chapters/relatedResearch.tex
 
 LaTeX Warning: Citation `compsocialchoice' on page 7 undefined on input line 2.
 
@@ -576,6 +576,19 @@ LaTeX Warning: Citation `Nitzan1982' on page 8 undefined on input line 18.
 
 
 LaTeX Warning: Citation `Shapley1984' on page 8 undefined on input line 18.
+
+
+LaTeX Warning: Citation `asimov' on page 8 undefined on input line 28.
+
+
+LaTeX Warning: Citation `whiteHouseReport' on page 8 undefined on input line 28
+.
+
+
+LaTeX Warning: Citation `obamaInterview' on page 8 undefined on input line 28.
+
+
+LaTeX Warning: Citation `ai100' on page 8 undefined on input line 28.
 
 ) [8]
 Chapter 3.
@@ -601,10 +614,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2657 strings out of 493027
- 34413 string characters out of 6134069
+ 2661 strings out of 493027
+ 34480 string characters out of 6134069
  99160 words of memory out of 5000000
- 6140 multiletter control sequences out of 15000+600000
+ 6144 multiletter control sequences out of 15000+600000
  10886 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,23p,890b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -616,7 +629,7 @@ r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (13 pages, 180960 bytes).
+Output written on main.pdf (13 pages, 182757 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
