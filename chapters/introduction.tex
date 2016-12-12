@@ -1,0 +1,31 @@
+The current state of artificial intelligence mandates the need to imbue machines with the ability to make moral decisions. Autonomous vehicles (AVs) roam our streets (citation), algorithms allocate kidneys to the sick (citation), and within the next few years, we may see the arrival of AI used to target drone strikes (citation) and even sentence criminals (citation). Thus, it is imperative that we as a society take steps towards programming and regulating these machines in ways that preserve our moral values -- failure to do so could be the difference between life and death. (cheesy, I know. Need to fix).
+
+Of equal importance to programming \textit{what} moral decisions AI will make is \textit{how} we program it to make these decisions. Given that AI systems will soon make decisions that are currently made by government officials, we must consider who programs the AI, and how they are held accountable. Are these systems controlled by private organizations, governments, or individuals? How will we control them if they do not function the way we anticipate? 
+
+MIT's Iyad Rahwan recently explored this question and characterized it as the need to develop society-in-the-loop algorithms capable of extending the social contract assumed between citizens and their governments to an algorithm. 
+
+In my thesis, I explore the implementation of society-in-the-loop algorithms in AVs via voting. Why voting? A well-established method of connecting people to their rulers, voting is backed by centuries of political theory and has, depending on your viewpoint, enabled moderate to extreme success for the societies that rely upon it as a method of political decision making. Since voting has facilitated large-scale societal decision making in the past, it seems natural to ask if it might do so now, in the case of deciding how moral AI systems will act. Why AVs? They provide an excellent domain to study -- the self-driving car trolley problem can be defined fairly easily, the algorithms that control the vehicles will affect society as a whole, and we as a nation have taken no significant steps towards deciding how this problem will be solved.
+\begin{comment}
+
+There are many ethical and moral issues associated with programming self driving cars to make moral decisions, the obvious one being ``what decisions should they make when''? However, there are also some non-obvious yet non-trivial ethical issues here.
+
+\begin{itemize}
+\item Who gets to program the cars? Is it an individual, a private company, a government?
+\item It is well-known that algorithms can exhibit biases (for example, racial). Should/how will algorithms account for this bias?
+\item What degree of ownership will society have over the programs/decision-making algorithms in these cars? 
+\item Should people have a right to voice their inputs for self-driving car (and other moral AI) programs? Should these programs be designed by researchers/governments to maximize social utility, or, should people be able to``vote'' on the moral preferences?
+\end{itemize}
+One way to implement a moral AI would be to try to somehow abstract or understand moral features/principles, and build an algorithm that uses this information to reason morally. For instance, you might survey people on which moral features they feel indicate whether a decision is right or wrong, and then build an algorithm that, using those features, makes decisions given new inputs. There are some potential problems with this approach:
+
+\begin{itemize}
+\item Voter/citizen distrust -- people are less likely to support/adopt a system they do not understand (think: machines taking over the world), and a system that abstracts moral values may be harder to understand.
+
+\item Consistency issues -- say we survey people on a problem X and use the results of that survey to build a new system, which then decides on problem Y. Is that the same as the majority vote decision the people would have made if they had originally been asked about problem Y?
+\end{itemize}
+One potential solution to this problem is via voting. Consider this: what if, every time a moral decision needed to be made, we conducted a vote, asking each person what action should be taken, and using a voting algorithm to decide what to do. This would seem to solve both problems -- people are (generally) likely to trust systems in which votes make decisions (our current government) and the consistency issue is avoided. This also seems to be grounded in current democratic philosophy in which votes are used to make decisions.
+
+Of course, it is not possible to conduct a vote each time a decision needs to be made (due to potentially $>$ millions of machines making many decisions all the time). We can, however, conceive of programs that can cast votes for people. For instance, imagine a moral problem with well-defined features. We could have a classifier that, for each person, learns their moral preferences and predicts their view on the moral problem. Then, when we need to make a decision, we could query all the classifiers, treat them as votes, and aggregate them into one decision. 
+
+Already this is an interesting problem for its applications to moral AI decision making and society-in-the-loop computing (as discussed by Iyad Rahwan). However, it is not clear that an algorithm will always have the time to evaluate all classifiers. Situations on the road are dynamic  -- it seems that sometimes, a self-driving car will have very little time with which to make a decision. It seems that we need to develop methods by which computers can either efficiently evaluate all classifiers, or approximate the result of evaluating all classifiers with high probability. A first attempt to formalize this problem is as follows:
+
+\end{comment}

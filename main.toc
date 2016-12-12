@@ -1,6 +1,9 @@
-\contentsline {chapter}{\numberline {1}Introduction}{6}
-\contentsline {chapter}{\numberline {2}Chapter Two Title}{7}
-\contentsline {chapter}{\numberline {3}Chapter Three Title}{8}
-\contentsline {chapter}{\numberline {4}Chapter Four Title}{9}
-\contentsline {chapter}{\numberline {5}Conclusion}{10}
-\contentsline {chapter}{\numberline {A}Appendix Title}{11}
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {2}Review of Prior Research}{7}
+\contentsline {section}{\numberline {2.1}Social Choice Theory}{7}
+\contentsline {subsection}{\numberline {2.1.1}Social choice theory basics}{7}
+\contentsline {subsection}{\numberline {2.1.2}Votes as noisy perceptions of correct rankings}{7}
+\contentsline {chapter}{\numberline {3}Chapter Three Title}{9}
+\contentsline {chapter}{\numberline {4}Chapter Four Title}{10}
+\contentsline {chapter}{\numberline {5}Conclusion}{11}
+\contentsline {chapter}{\numberline {A}Appendix Title}{12}
