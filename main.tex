@@ -4,12 +4,15 @@
 \usepackage[nottoc]{tocbibind}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{cite}
+\usepackage{natbib}
 \usepackage{comment}
 \graphicspath{ {images/} }
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
 \title{
 	{Crowdsourcing Moral AI in Self-Driving Cars}\\
 	{\large Duke University}\\
@@ -41,8 +44,8 @@ I want to thank Professors Vincent Conitzer, Walter Sinnott-Armstrong, Jana Scha
 \chapter{Review of Related Research}
 \input{chapters/relatedResearch}
 
-\chapter{Chapter Three Title}
-\input{chapters/chapter03}
+\chapter{Description of Main Problem}
+\input{chapters/problem}
 
 \chapter{Chapter Four Title}
 \input{chapters/chapter04}
@@ -55,8 +58,9 @@ I want to thank Professors Vincent Conitzer, Walter Sinnott-Armstrong, Jana Scha
 \input{chapters/appendix}
 
 
-\bibliographystyle{unsrt}
-\bibliography{bibliography}
+
+\bibliography{bibliography}{}
+\bibliographystyle{plain}
 
 
 \end{document}

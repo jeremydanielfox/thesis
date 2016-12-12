@@ -4,7 +4,10 @@
 \contentsline {subsection}{\numberline {2.1.1}Social choice theory basics}{7}
 \contentsline {subsection}{\numberline {2.1.2}Votes as noisy perceptions of correct rankings}{7}
 \contentsline {section}{\numberline {2.2}Artificial Intelligence Morality}{8}
-\contentsline {chapter}{\numberline {3}Chapter Three Title}{9}
-\contentsline {chapter}{\numberline {4}Chapter Four Title}{10}
-\contentsline {chapter}{\numberline {5}Conclusion}{11}
-\contentsline {chapter}{\numberline {A}Appendix Title}{12}
+\contentsline {chapter}{\numberline {3}Description of Main Problem}{9}
+\contentsline {section}{\numberline {3.1}The Autonomous Vehicle Trolley Problem}{9}
+\contentsline {subsection}{\numberline {3.1.1}Problem description}{9}
+\contentsline {chapter}{\numberline {4}Chapter Four Title}{12}
+\contentsline {chapter}{\numberline {5}Conclusion}{13}
+\contentsline {chapter}{\numberline {A}Appendix Title}{14}
+\contentsline {chapter}{Bibliography}{15}
