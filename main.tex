@@ -3,11 +3,18 @@
 \usepackage{graphicx}
 \usepackage[nottoc]{tocbibind}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{cite}
 \usepackage{natbib}
 \usepackage{comment}
+\usepackage{caption}
+\captionsetup[table]{name=Example Individual Profile}
 \graphicspath{ {images/} }
+
+\newcommand{\budget}{\mathcal{B}}
+\newcommand{\decision}{D}
+\newcommand{\correct}{M}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
@@ -28,7 +35,7 @@
 
 
 \chapter*{Abstract}
-The thesis concerns the problem of moral decision making in self-driving cars. I examine some of the key philosophical issues involved in programming cars to make moral decisions and propose crowdsourced morality as a solution. I begin by surveying the problems inherent in this approach and explore random sampling as a possible solution. Finally, I conclude by suggesting further research avenues in this area.
+The thesis concerns the problem of moral decision making in self-driving cars. I examine some of the key philosophical issues involved in programming cars to make moral decisions and propose a proxy voting scheme as a solution. I begin by surveying related work in the topics of social choice, algorithmic morality and self-driving cars. I continue by exploring the problems inherent in this approach and explore random sampling as a possible solution. Finally, I conclude by suggesting further research avenues in this area.
 
 \chapter*{Dedication}
 To mum and dad
@@ -47,8 +54,8 @@ I want to thank Professors Vincent Conitzer, Walter Sinnott-Armstrong, Jana Scha
 \chapter{Description of Main Problem}
 \input{chapters/problem}
 
-\chapter{Chapter Four Title}
-\input{chapters/chapter04}
+\chapter{Future Research}
+\input{chapters/futureResearch}
 
 \chapter{Conclusion}
 \input{chapters/conclusion}
