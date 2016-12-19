@@ -1,0 +1,101 @@
+\section{The Autonomous Vehicle Trolley Problem}
+\subsection{Problem description}
+Many people have loosely and casually talked about the AV trolley problem over the past year, usually saying something along the lines of ``should your self-driving car kill you, or others?" Although the problem of programming an AV to make moral decisions is very nuanced and involves consideration of varied, wide-ranging scenarios, I here formalize a more narrowed definition of the problem for use in my thesis.
+
+The problem I will work with is as follows: an AV is driving on the road, with passengers inside, and encounters a situation in which there are people on the road. In this situation, there will be unavoidable harm that must come to either the passengers inside the car, or the pedestrians in front of the car. Since this harm is unavoidable, the car cannot deal with the question of how to avoid harm, but instead must decide who to harm. The car has two options -- it can either drive straight, and hit the pedestrians in front of it, or swerve off the road, injuring its passengers. The car is presented with profiles of information on its passengers and the pedestrians -- it must use this information to decide whether to swerve, or drive straight.
+
+\begin{definition}[Individual Profile]
+The information available about an individual, or their individual profile, is a vector composed of real numbers, categorical data, and boolean values.
+\end{definition}
+
+\begin{table}
+\caption{Small boy}
+\begin{center}
+\begin{tabular}{c | c | c}
+Age & Gender & Ran in front of car \\ \hline
+7 & Male & True\\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{Elderly driver}
+\begin{center}
+\begin{tabular}{c | c | c}
+Age & Gender & Organ donor \\ \hline
+82 & Female & False\\
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{definition}[The AV Trolley Problem]
+An AV is given two choices -- drive straight, or swerve. There is a set of people inside the car, and a set of people in front of the car. The AV is guaranteed that to drive straight is to injure the parties in front of it, and to swerve is to injure the people inside the car. Given a set of individual profiles on the parties in front of the car and those inside the car, the AV trolley problem is to decide whether to drive straight or swerve.
+\end{definition}
+
+Although this problem has been widely discussed, few proposals have been made toward actually solving it. My original proposal was to use voting to solve this problem -- in essence, to crowdsource a solution. Here we are faced with a problem -- it is ridiculous to imagine individuals can actually vote on what decision an AV can make, as the AV will only have a few seconds to make such a decision -- obviously, this is not enough time to elicit votes. Instead, I propose the use of \textit{proxy voting algorithms} (equivalently, just voting algorithms) that can, in the inability of an individual to cast a vote, vote in their place. 
+
+\begin{definition}[Voting algorithm]
+Let us denote the set of individual profiles of individuals inside the car and outside the car as $S$. Let's denote the action of ``drive straight" as 1, ``no decision" as 0, and ``swerve" as -1. We call $f$ a voting algorithm if $f : S \rightarrow \{1,0,-1\}$.
+\end{definition}
+
+If we have voting algorithms, then we can imagine a new scenario: each individual submits a voting algorithm to a self driving car. The car's new objective becomes to use these voting algorithms to decide what decision to make. 
+
+Now, I would like to introduce one more constraint -- the AV does not necessarily have enough time to evaluate all voting algorithms. Why is this? It seems reasonable to assume that such a system, deployed on a society-wide scale, might contain hundreds of millions of voting algorithms, while an AV might only have a few tenths of a second in which to make a decision. Thus, the challenge becomes to evaluate the voting AV problem under a fixed time constraint.
+
+Of course, this is still a relatively large and ambiguous problem, with wide-ranging constraints and criteria. To narrow this problem down for my thesis, I made several reasonable assumptions to turn this into a manageable problem -- related problems are discussed extensively in the future research section.
+
+Following is a list of the major assumptions I have made in defining this problem:
+
+\begin{itemize}
+\item Each person will submit one voting algorithm. Voting algorithms may take different forms -- thus, while you may use a decision tree, I may map each scenario to a point in some Cartesian space, after which it is classified by a linear separator.
+
+\item Since each voting algorithm has a different form, different voting algorithms may take different amounts of time to run. Although algorithm speed may vary, we can sample each algorithm repeatedly to obtain a distribution over the time it takes to run.
+
+\item There may exist correlations between the runtime of a voting algorithm, and the probability it makes the correct decision.
+
+\end{itemize}
+
+From here, we can derive a new version of the AV voting problem problem
+
+\begin{definition}[The AV Voting Budget Problem (AVVBP)]
+Given a budget, $\budget$, a set of voting algorithms, V, where each voting algorithm $v_i$ has associated cost $c_i$, and a set of individual profiles, S, and assuming there exists a correct decision $\correct$, we wish to choose a decision $\decision \in \{1,-1\}$ such that the probability that $$\decision = \correct$$ is maximized, subject to $$ \sum_{i} c_i < \budget$$.
+\end{definition} 
+
+\subsection{Statistical Modeling and Random Sampling}
+ 
+ \subsubsection{Hierarchical Model}
+ 
+What follows is my statistical model for AVVBP. Let's assume there is a correct choice $Y \in \{-1,1\}$. Each voting algorithm $v_i$ will vote for $Y$ with probability $\theta_i$, a probability which is drawn from a beta distribution, Beta $( \alpha, \beta)$, where we can think of this beta distribution as a prior on a voter's ability to vote correctly. Thus, the correctness of voter $i$ is distributed Bernoulli($\theta_i$), where $\theta_i$ is distributed $Beta (\alpha, \beta)$. We will call the random variable that turns up 1 if voter $i$ votes correctly and 0 otherwise $X_i$. Now, let's also assume each voting algorithm runs with a cost $c_i  = b_i + noise$, where $b_i$ represents some base cost for voting function $i$, and noise is distributed Normal($\mu, \sigma^2)$. We want $b_i$ to be related to $\theta_i$, so we will say that $b_i = f(\theta_i)$, where we can choose $f$ appropriately to model different interactions relations between $b_i$ and $\theta_i$. For instance, if we want cost to relate inversely to ability to vote correctly, we could pick $f(\theta_i) = A(1-\theta_i)$, where $A$ is some fixed constant. 
+
+\subsubsection{Random Sampling}
+Now that I have derived my model, I will show some results associated with various random sampling approaches. I would like to be able to give the exact probability that, in a random sample of $n$ voting functions, at least half of the functions vote for the correct answer. I have not been able to do that -- however, I have been able to provide a small lower bound on the probability the majority will vote correctly, given a constant $c$, where every voting function votes correctly with probability at least $c$.
+
+Let random variable $X = \sum_{i=1}^n X_i$. I would like to lower bound $P(X > \frac{n}{2})$. Although I have not been able to lower bound this quantity directly, I can lower bound it in terms of a third variable, $c$. 
+
+\begin{theorem}
+\begin{align*}
+P\left(X > \frac{n}{2}\right) > \sum_{i=\lceil n/2 \rceil}^{n} {n \choose i} c^i (1-c)^{n-1} Q^n
+\end{align*}
+where 
+\begin{align*}
+Q = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_{c}^{1} x^{\alpha - 1}(1-x)^{\beta-1}dx, \; \; c \in [0,1]
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+Let $c \in [0,1]$ denote a lower bound on each $\theta_j$ -- thus, each voter will vote correctly with probability at least $c$. Clearly, $P(X > \frac{n}{2}) > P(X > \frac{n}{2} \; \text{and} \; \theta_j > c \; \forall j) = P(X > \frac{n}{2} \mid \theta_j > c \; \forall j)P(\theta_j > c \; \forall j)$, where the inequality comes from taking away some cases where $X$ may be greater than $\frac{n}{2}$. For any $\theta_j$, $P(\theta_j > c)$ can be calculated directly by integrating the probability density function of Beta($\alpha, \beta$) -- thus, $P(\theta_j > c) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\int_{c}^{1} x^{\alpha - 1}(1-x)^{\beta-1}dx$. I will denote this quantity as $Q$. The probability that all theta values are greater than $c$ is thus given by $Q^n$. Now, $P(X > \frac{n}{2} \mid \theta_j > c \; \forall j) > P(X > \frac{n}{2} \mid \theta_j = c \; \forall j)$. Thus, let us assume each $\theta_j = c$ in order to lower bound this quantity. In this case, we end up with a binomial distribution on the value $c$, and sum all instances where the number of "positive" values is greater than $n/2$. Thus, $P(X > \frac{n}{2} \mid \theta_j > c \; \forall j) > P(X > \frac{n}{2} \mid \theta_j = c \; \forall j) = \sum_{i=\lceil n/2 \rceil}^{n} {n \choose i} c^i (1-c)^{n-1}$ -- multiplying this by $Q^n$ gives us the lower bound on the proof.
+\end{proof}
+
+
+\begin{comment}
+
+How were these distributions chosen?
+
+For the costs, I wanted a continuous distribution that only allowed positive values, as any algorithm must run for at least some amount of time. Furthermore, since we are unable to determine whether an algorithm will terminate for a given input	\cite(haltingProblem), I wanted a distribution that would allow for an algorithm to run for an infinite amount of time. Thus, whatever distribution I chose needed to output costs in the interval $(0, \infty)$. I also wanted a modal distribution to support the idea that there might be a concentration of voting functions with similar runtimes. Finally, I wanted a distribution whose shape was not dependent on scale -- this was motivated by the fact that the time an algorithm takes to run should be invariant to which unit of time we use -- thus, we do not want the shape of our distribution to change if we are talking about seconds or milliseconds. In this case, we want to be able to multiply all values of the distribution by a constant, which the general gamma distribution supports.
+
+For voter correctness, I wanted to adapt the model of voters being distributed i.i.d bernoulli to one in which voters did not have identical bernoulli distributions. Thus, I wanted some distribution from which I could draw an input to a bernoulli -- that is, a distribution on the interval $[0,1]$.
+
+\end{comment}
+
+
+

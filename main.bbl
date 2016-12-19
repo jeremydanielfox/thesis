@@ -1,0 +1,55 @@
+\begin{thebibliography}{10}
+
+\bibitem{asimov}
+Isaac Asimov.
+\newblock {\em I, robot}, volume~1.
+\newblock Spectra, 2004.
+
+\bibitem{compsocialchoice}
+Felix Brandt, Vincent Conitzer, Ulle Endriss, Jerome Lang, and Ariel~D.
+  Procaccia.
+\newblock {\em Handbook of Computational Social Choice}.
+\newblock Cambridge University Press, 2016.
+
+\bibitem{condorcet}
+Marquis~de Condorcet.
+\newblock Essay on the application of analysis to the probability of majority
+  decisions.
+\newblock {\em Paris: Imprimerie Royale}, 1785.
+
+\bibitem{obamaInterview}
+Scott Dadich.
+\newblock Barack obama, neural nets, self-driving cars, and the future of the
+  world, 2016.
+
+\bibitem{uberSelfDrivingCar}
+Anthony Levandowski and Travis Kalanick.
+\newblock Pittsburgh, your self-driving uber is arriving now, 2016.
+
+\bibitem{Nitzan1982}
+Shmuel Nitzan and Jacob Paroush.
+\newblock Optimal decision rules in uncertain dichotomous choice situations.
+\newblock {\em International Economic Review}, 23(2):289--297, 1982.
+
+\bibitem{whiteHouseReport}
+Preparing for the future of artificial intelligence, 2016.
+
+\bibitem{Shapley1984}
+Lloyd Shapley and Bernard Grofman.
+\newblock Optimizing group judgmental accuracy in the presence of
+  interdependencies.
+\newblock {\em Public Choice}, 43(3):329--343, 1984.
+
+\bibitem{ai100}
+Peter Stone, Rodney Brooks, Erik Brynjolfsson, Ryan Calo, Oren Etzioni, Greg
+  Hager, Julia Hirschberg, Shivaram Kalyanakrishnan, Ece Kamar, Sarit Kraus,
+  Kevin Leyton-Brown, David Parkes, William Press, AnnaLee Saxenian, Julie
+  Shah, Milind Tambe, and Astro Teller.
+\newblock Artificial intelligence and life in 2030, 2016.
+
+\bibitem{teslaSelfDrivingCar}
+The~Tesla Team.
+\newblock All tesla cars being produced now have full self-driving hardware,
+  2016.
+
+\end{thebibliography}

@@ -1,16 +1,17 @@
-\contentsline {chapter}{\numberline {1}Introduction}{5}
-\contentsline {chapter}{\numberline {2}Review of Related Research}{7}
-\contentsline {section}{\numberline {2.1}Social Choice Theory}{7}
-\contentsline {subsection}{\numberline {2.1.1}Social choice theory basics}{7}
-\contentsline {subsection}{\numberline {2.1.2}Votes as noisy perceptions of correct rankings}{7}
-\contentsline {section}{\numberline {2.2}Artificial Intelligence Morality}{8}
-\contentsline {chapter}{\numberline {3}Description of Main Problem}{9}
-\contentsline {section}{\numberline {3.1}The Autonomous Vehicle Trolley Problem}{9}
-\contentsline {subsection}{\numberline {3.1.1}Problem description}{9}
+\contentsline {chapter}{\numberline {1}Introduction}{4}
+\contentsline {chapter}{\numberline {2}Review of Related Research}{5}
+\contentsline {section}{\numberline {2.1}Social Choice Theory}{5}
+\contentsline {subsection}{\numberline {2.1.1}Social choice theory basics}{5}
+\contentsline {subsection}{\numberline {2.1.2}Votes as noisy perceptions of correct rankings}{5}
+\contentsline {section}{\numberline {2.2}Artificial Intelligence Morality}{6}
+\contentsline {chapter}{\numberline {3}Description of Main Problem}{7}
+\contentsline {section}{\numberline {3.1}The Autonomous Vehicle Trolley Problem}{7}
+\contentsline {subsection}{\numberline {3.1.1}Problem description}{7}
+\contentsline {subsection}{\numberline {3.1.2}Statistical Modeling and Random Sampling}{10}
+\contentsline {subsubsection}{Hierarchical Model}{10}
+\contentsline {subsubsection}{Random Sampling}{10}
 \contentsline {chapter}{\numberline {4}Future Research}{12}
 \contentsline {section}{\numberline {4.1}Decision Function Aggregation}{12}
 \contentsline {subsection}{\numberline {4.1.1}Decision Boundaries}{12}
 \contentsline {subsection}{\numberline {4.1.2}Decision Trees}{13}
-\contentsline {chapter}{\numberline {5}Conclusion}{14}
-\contentsline {chapter}{\numberline {A}Appendix Title}{15}
-\contentsline {chapter}{Bibliography}{16}
+\contentsline {chapter}{Bibliography}{14}

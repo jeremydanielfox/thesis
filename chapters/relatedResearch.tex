@@ -1,0 +1,28 @@
+\section{Social Choice Theory}
+Here, I briefly review the basics of social choice theory as they relate to my thesis. For a more in-depth understanding of social choice theory and its applications in computer science and AI, I refer readers to the Handbook of Computational Social Choice \cite{compsocialchoice}.
+
+\subsection{Social choice theory basics}
+Voting informally seeks to aggregate the preferences of a group of people. More formally, if we have $N$ voters and $M$ candidates, we define a \textit{ballot} as a ranked ordering over alternatives by a voter, and a \textit{voting rule} as a function that maps from the set of ballots to a single ranked ordering.
+
+Often, in social choice theory, we are handed a set of ballots -- the question is how to choose the best voting rule to aggregate them.
+
+\subsection{Votes as noisy perceptions of correct rankings}
+Although many people view vote aggregation as a way of selecting the candidate that best agrees with the preferences of voters, this is not the only model of voting. In 1785, Condorcet proposed a model of social choice in which a correct ranking existed over all the candidates, and our votes were noisy perceptions of this correct ranking \cite{condorcet}. In Condorcet's model, voters were more likely than not to make a correct ranking rather than an incorrect ranking, they cast their votes independently of one another, and they were all equally likely to be correct. In this model, the question becomes: Which voting algorithm chooses a ranking that has maximal probability of being correct? Condorcet's Jury Theorem tells us that majority rule is the best decision function to use in this case.\cite{condorcet}
+\begin{theorem}[Condorcet Jury Theorem]
+Assume we have $N$ voters voting over 2 alternatives for which their exists a correct ranking. Each alternative has an a priori chance of .5 of being correct, and each voter has a probability $.5 < p_i \leq 1$ of being correct. Let $P_N$ denote the probability that majority vote over the groups preferences gives the correct decision.
+\begin{align*}
+\lim_{N \to \infty} P_N = 1
+\end{align*}
+\end{theorem}
+
+This model can be extended to cases in which voters do not have equal probability of being right \cite{Nitzan1982, Shapley1984}.
+
+\begin{theorem}[The Bayesian Optimal Decision Rule]
+ If we have a dichotomous decision with each choice having an a priori probability of .5 of being correct, and voters cast their votes independently of each other, then weighted majority vote maximizes the probability of being correct, with weights $w_i$ given by:
+ \begin{align*}
+ w_i \propto \log \frac{p_i}{1 - p_i}
+ \end{align*}
+\end{theorem}
+
+\section{Artificial Intelligence Morality}
+In his book \textit{I, Robot}, Isaac Asimov recognized the problem of programming morality into machines and explored the ways in which humanity's attempts to solve this problem could go awry\cite{asimov}. Today, AI morality is no longer the worry of science fiction -- the potential benefits and dangers associated with artificial intelligence have been recently been highlighted by major news outlets (cite) and even the White House\cite{whiteHouseReport, obamaInterview}.  However, as the One Hundred Year Study on Artificial Intelligence recently acknowledged, the societal impacts and safety of AI are currently under-researched and under-funded\cite{ai100}. 
